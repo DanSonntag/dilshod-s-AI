@@ -1,0 +1,13 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(0, 128, 128, 0.668);
+}
+
+body {
+  background: #2e2e6f;
+}
