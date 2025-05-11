@@ -82,7 +82,7 @@ const Wrapper = styled.div`
   @media (max-width: 912px) {
     .container {
       overflow: hidden;
-      font-size: .9em;
+      font-size: .7em;
     }
     .myname {
       padding-top: 64px;
