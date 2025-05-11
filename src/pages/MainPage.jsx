@@ -264,8 +264,9 @@ function MainPage() {
 export default MainPage
 
 const Wrapper = styled.div`
-  width: 100vw;
+   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   /* background: linear-gradient(#242461, #262641); */
   background: url(${background}) no-repeat;
   display: flex;
