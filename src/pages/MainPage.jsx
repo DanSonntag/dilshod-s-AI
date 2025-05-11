@@ -25,6 +25,9 @@ function MainPage() {
       { text: 'How to work with API?', sender: 'user' },
     ]);
     const [vis, setVis] = useState(false)
+    const [visible, setVisible] = useState(false);
+    const navigate = useNavigate()
+
   
     const handleSend = async () => {
       if (!input.trim()) return;
@@ -56,6 +59,7 @@ function MainPage() {
     }
 
     const goAsk = async (e) => {
+    setVisible(false)
       const promptText = e.target.innerText;
       setInput(promptText);
       setChats((prev) => [...prev, { sender: 'user', text: promptText }]);
@@ -67,7 +71,6 @@ function MainPage() {
       setChats((prev) => [...prev, { sender: 'ai', text: aiResponse }]);
     }
 
-    const [visible, setVisible] = useState(false);
     // this function is used to close the modal
     function closeModal() {
       setVisible(true)
@@ -86,7 +89,6 @@ function MainPage() {
       setVis(false)
     }
 
-    const navigate = useNavigate()
     // Go back to main page
     function goBack() {
       navigate('/loading')
