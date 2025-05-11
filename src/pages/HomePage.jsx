@@ -65,6 +65,10 @@ function HomePage() {
 export default HomePage
 
 const Wrapper = styled.main`
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  
   .container::after {
   content: "";
   position: absolute;
