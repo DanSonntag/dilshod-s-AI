@@ -918,7 +918,8 @@ ul li a img {
       width: 100vw;
       padding: 0;
       overflow: hidden;
-      height: 100vh;
+      height: 100vh;  
+      height: 100dvh;
 
 
       .main-upper {
