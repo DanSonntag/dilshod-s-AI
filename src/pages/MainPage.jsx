@@ -25,9 +25,6 @@ function MainPage() {
       { text: 'How to work with API?', sender: 'user' },
     ]);
     const [vis, setVis] = useState(false)
-    const [visible, setVisible] = useState(false);
-    const navigate = useNavigate()
-
   
     const handleSend = async () => {
       if (!input.trim()) return;
@@ -58,8 +55,18 @@ function MainPage() {
       setInput('')
     }
 
+    const [visible, setVisible] = useState(false);
+    // this function is used to close the modal
+    function closeModal() {
+      setVisible(true)
+      setVis(false)
+    }
+    function closeModal1() {
+      setVisible(false)
+    }
+
     const goAsk = async (e) => {
-    setVisible(false)
+      setVisible(false)
       const promptText = e.target.innerText;
       setInput(promptText);
       setChats((prev) => [...prev, { sender: 'user', text: promptText }]);
@@ -71,15 +78,6 @@ function MainPage() {
       setChats((prev) => [...prev, { sender: 'ai', text: aiResponse }]);
     }
 
-    // this function is used to close the modal
-    function closeModal() {
-      setVisible(true)
-      setVis(false)
-    }
-    function closeModal1() {
-      setVisible(false)
-    }
-
     // it shows modal when the unprepared buttons pressed
     function showModal() {
       setVisible(false)
@@ -89,6 +87,7 @@ function MainPage() {
       setVis(false)
     }
 
+    const navigate = useNavigate()
     // Go back to main page
     function goBack() {
       navigate('/loading')
