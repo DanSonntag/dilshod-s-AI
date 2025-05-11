@@ -66,17 +66,22 @@ function MainPage() {
     }
 
     const goAsk = async (e) => {
-      setVisible(false)
+      // Check screen width
+      if (window.innerWidth < 912) {
+        setVisible(false); // Hide the sidebar in phone mode
+      }
+    
       const promptText = e.target.innerText;
       setInput(promptText);
       setChats((prev) => [...prev, { sender: 'user', text: promptText }]);
-  
+    
       // Send message to AI
       const aiResponse = await sendMessageToAI(promptText);
-  
+    
       // Add AI response to chat
       setChats((prev) => [...prev, { sender: 'ai', text: aiResponse }]);
-    }
+      setInput("");
+    };
 
     // it shows modal when the unprepared buttons pressed
     function showModal() {
