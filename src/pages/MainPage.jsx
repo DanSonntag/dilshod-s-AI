@@ -51,10 +51,13 @@ function MainPage() {
 
     // this function reloads the page when "New Chat" button is clicked
     function reloadPage() {
-      setChats([])
-      setInput('')
-      setVisible(false)
-      setVis(false)
+      if (window.innerWidth < 912) {
+        setVisible(false); // Hide the sidebar in phone mode
+        setInput(''); // Clear the input field
+        setChats([]);
+      } else {
+        setChats([]); // Clear the chat messages in computer mode
+      }
     }
 
     const [visible, setVisible] = useState(false);
