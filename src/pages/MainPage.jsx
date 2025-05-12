@@ -53,6 +53,8 @@ function MainPage() {
     function reloadPage() {
       setChats([])
       setInput('')
+      setVisible(false)
+      setVis(false)
     }
 
     const [visible, setVisible] = useState(false);
